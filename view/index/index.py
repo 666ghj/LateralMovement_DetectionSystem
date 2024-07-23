@@ -3,7 +3,7 @@
 from flask import Flask, render_template, Blueprint
 
 # 创建新的蓝图来处理 /index 路由
-index_pb = Blueprint('index', __name__, template_folder='.')
+index_pb = Blueprint('index', __name__, template_folder='.', static_folder='')
 
 
 @index_pb.route('/index')
