@@ -6,7 +6,6 @@ app.secret_key = 'The author of this system is BaiFu.'
 from view.index import index
 app.register_blueprint(index.index_pb)
 
-
 @app.route('/')
 def begin():
     # 跳转到index页面
