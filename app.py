@@ -4,7 +4,9 @@ app = Flask(__name__)
 app.secret_key = 'The author of this system is BaiFu.'
 
 from view.index import index
+from view.page import page
 app.register_blueprint(index.index_pb)
+app.register_blueprint(page.page_pb)
 
 @app.route('/')
 def begin():
