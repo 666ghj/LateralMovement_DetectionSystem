@@ -487,79 +487,151 @@
         chart.render();
       }
 
-      if(jQuery("#chart-apex-column-02").length){
+      // index页连接方式统计
+      if (jQuery("#chart-apex-column-02").length) {
         var options = {
           series: [{
-          data: [55, 42, 19, 30, 20, 65, 21, 23, 45, 60, 30, 20]
-        }],
-        colors: ['#b3cccc', '#04237D', '#4d4dff'],
-          chart: {
-          height: 183,
-          type: 'bar',
-          toolbar:{
-            show: false,
-          },
-          sparkline: {
-            enabled: true,
-          },
-          events: {
-            click: function(chart, w, e) {
-              // console.log(chart, w, e)
-            }
-          }
-        },
-        plotOptions: {
-          bar: {
-            columnWidth: '40%',
-            distributed: true,
-            borderRadius: 5,
-          }
-        },
-        dataLabels: {
-          enabled: false
-        },
-        legend: {
-          show: false
-        },
-        grid: {
-          xaxis: {
-              lines: {
-                  show: false
+            data: [
+              {
+                x: '28 Jul',
+                y: 55,
+                fillColor: '#b3cccc',
+              },
+              {
+                x: '28 Jul',
+                y: 45,
+                fillColor: '#04237D',
+                name: 'password'
+              },
+              {
+                x: '28 Jul',
+                y: 19,
+                fillColor: '#4d4dff',
+              },
+              {
+                x: '29 Jul',
+                y: 30,
+                fillColor: '#b3cccc',
+                name: 'publickey'
+              },
+              {
+                x: '29 Jul',
+                y: 20,
+                fillColor: '#04237D',
+              },
+              {
+                x: '29 Jul',
+                y: 43,
+                fillColor: '#4d4dff',
+                name: 'keyboard-interactive/pam'
+              },
+              {
+                x: '30 Jul',
+                y: 21,
+                fillColor: '#b3cccc',
+              },
+              {
+                x: '30 Jul',
+                y: 23,
+                fillColor: '#04237D',
+              },
+              {
+                x: '30 Jul',
+                y: 45,
+                fillColor: '#4d4dff',
               }
+            ]
+          }],
+          chart: {
+            height: 183,
+            type: 'bar',
+            toolbar: {
+              show: false,
+            },
+            sparkline: {
+              enabled: true,
+            },
+            events: {
+              click: function(chart, w, e) {
+                // console.log(chart, w, e)
+              }
+            }
+          },
+          plotOptions: {
+            bar: {
+              columnWidth: '40%',
+              distributed: true,
+              borderRadius: 5,
+            }
+          },
+          dataLabels: {
+            enabled: true,
+            formatter: function(val, opt) {
+              return opt.w.config.series[0].data[opt.dataPointIndex].name;
+            },
+            offsetY: 85,  // 调整这个值以确保标签在柱形上方显示
+            style: {
+              fontSize: '12px',
+              colors: ["#304758"]
+            },
+            textAnchor: 'middle'  // 确保标签在柱形的中间对齐
+          },
+          legend: {
+            show: true,
+            position: 'top',
+            horizontalAlign: 'center',
+            floating: true,
+            offsetY: -10
+          },
+          grid: {
+            xaxis: {
+              lines: {
+                show: false
+              }
+            },
+            yaxis: {
+              lines: {
+                show: false
+              }
+            }
           },
           yaxis: {
-              lines: {
-                  show: false
-              }
-          }
-        },
-        yaxis: {
-          labels: {
-          offsetY:0,
-          minWidth: 10,
-          maxWidth: 10
+            labels: {
+              offsetY: 0,
+              minWidth: 10,
+              maxWidth: 10
+            },
           },
-        },
-        
-        xaxis: {
-          categories: [           
-            '30 Jan',
-            '25 Feb',
-            '28 Mar', 
-          ],
-          labels: {
-            minHeight: 20,
-            maxHeight: 20,
-            style: {
-              fontSize: '12px'
+          xaxis: {
+            categories: [
+              '28 Jul',
+              '28 Jul',
+              '28 Jul',
+              '29 Jul',
+              '29 Jul',
+              '29 Jul',
+              '30 Jul',
+              '30 Jul',
+              '30 Jul'
+            ],
+            labels: {
+              minHeight: 20,
+              maxHeight: 20,
+              style: {
+                fontSize: '12px'
+              }
             }
           }
-        }
         };
-
+      
         var chart = new ApexCharts(document.querySelector("#chart-apex-column-02"), options);
         chart.render();
       }
+      
+      
+
+      
+      
 
       if(jQuery("#chart-apex-column-03").length){
           var options = {
