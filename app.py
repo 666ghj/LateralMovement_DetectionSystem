@@ -3,15 +3,15 @@ import re
 app = Flask(__name__)
 app.secret_key = 'The author of this system is BaiFu.'
 
-from view.index import index
+from view.dashboard import dashboard
 from view.page import page
-app.register_blueprint(index.index_pb)
+app.register_blueprint(dashboard.dashboard_pb)
 app.register_blueprint(page.page_pb)
 
 @app.route('/')
 def begin():
-    # 跳转到index页面
-    return redirect('/index')
+    # 跳转到dashboard页面
+    return redirect('/dashboard')
 
 # 404错误
 @app.errorhandler(404)
