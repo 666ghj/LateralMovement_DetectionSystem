@@ -1,6 +1,6 @@
 {% extends 'base_page.html' %}
 {% block title %}
-    动态图谱
+    主页
 {% endblock %}
 {% block nav %}
 <nav class="iq-sidebar-menu">
@@ -18,7 +18,7 @@
                 <span class="ml-2">系统大屏</span>
             </a>
         </li>
-        <li class="sidebar-layout">
+        <li class="active sidebar-layout">
             <a href="/index" class="svg-icon">
                 <i class="">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewbox="0 0 24 24"
@@ -34,7 +34,7 @@
         <li class="px-3 pt-3 pb-2 ">
             <span class="text-uppercase small font-weight-bold">网络结构</span>
         </li>
-        <li class="active sidebar-layout">
+        <li class="sidebar-layout">
             <a href="/nodeMap" class="svg-icon ">
                 <i class="">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewbox="0 0 24 24"
@@ -157,15 +157,4 @@
         </li>
     </ul>
 </nav>
-{% endblock %}
-{% block content %}
-    <iframe src="http://localhost:7474/browser/" frameborder="0" style="width: 100%; height: 100vh;" class="iframe_dashboard"></iframe>
-
-    <style>
-
-        .iframe_dashboard {
-            margin-top: -20px;
-        }
-
-    </style>
 {% endblock %}
