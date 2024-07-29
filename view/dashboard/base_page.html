@@ -15,6 +15,7 @@
 </head>
 <script src="/static/echarts.min.js"></script>
 <script src="/static/china.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <body class="  ">
     <!-- loader Start -->
@@ -959,23 +960,23 @@
                                 </div>
                             </div>
                             <div class="card-body p-0">
-                                <div id="echats-test" style="width: 600px;height:400px;"></div>
+                                <div id="echats-test2" style="width: 700px;height:400px;"></div>
                                 <script>
-                                    var ROOT_PATH = 'test.json'
+                                    var ROOT_PATH = 'static\\echarts_data'
 
-                                    var chartDom = document.getElementById('echats-test')
+                                    var chartDom = document.getElementById('echats-test2')
                                     var myChart = echarts.init(chartDom)
                                     var option
 
                                     myChart.showLoading()
                                     $.getJSON(
-                                        ROOT_PATH,
+                                        ROOT_PATH + '\\demo.json',
                                         function (json) {
                                             myChart.hideLoading()
                                             myChart.setOption(
                                                 (option = {
                                                     title: {
-                                                        text: 'NPM Dependencies'
+                                                        text: ''
                                                     },
                                                     animationDurationUpdate: 1500,
                                                     animationEasingUpdate: 'quinticInOut',
@@ -997,7 +998,7 @@
                                                                 }
                                                             }),
                                                             edges: json.edges.map(function (edge) {
-                                                                if (edge.sourceID === 'async' || edge.targetID === 'async') {
+                                                                if (edge.sourceID === 'dwda' || edge.targetID === 'asdawdwaync') {
                                                                     return {
                                                                         source: edge.sourceID,
                                                                         target: edge.targetID,
@@ -1104,7 +1105,84 @@
                                 </div>
                             </div>
                             <div class="card-body p-0">
+                                <div id="echats-test1" style="width: 600px;height:400px;"></div>
+                                <script>
+                                    var ROOT_PATH = 'static\\echarts_data'
 
+                                    var chartDom1 = document.getElementById('echats-test1')
+                                    var myChart1 = echarts.init(chartDom1)
+                                    var option
+
+                                    myChart1.showLoading()
+                                    $.getJSON(
+                                        ROOT_PATH + '\\demo.json',
+                                        function (json) {
+                                            myChart1.hideLoading()
+                                            myChart1.setOption(
+                                                (option = {
+                                                    title: {
+                                                        text: ''
+                                                    },
+                                                    animationDurationUpdate: 1500,
+                                                    animationEasingUpdate: 'quinticInOut',
+                                                    series: [
+                                                        {
+                                                            type: 'graph',
+                                                            layout: 'none',
+                                                            // progressiveThreshold: 700,
+                                                            data: json.nodes.map(function (node) {
+                                                                return {
+                                                                    x: node.x,
+                                                                    y: node.y,
+                                                                    id: node.id,
+                                                                    name: node.label,
+                                                                    symbolSize: node.size,
+                                                                    itemStyle: {
+                                                                        color: node.color
+                                                                    }
+                                                                }
+                                                            }),
+                                                            edges: json.edges.map(function (edge) {
+                                                                if (edge.sourceID === 'async' || edge.targetID === 'async') {
+                                                                    return {
+                                                                        source: edge.sourceID,
+                                                                        target: edge.targetID,
+                                                                        lineStyle: {
+                                                                            color: '#FFD700', // 设置为黄色
+                                                                            width: 5 // 设置为粗线
+                                                                        }
+                                                                    }
+                                                                } else {
+                                                                    return {
+                                                                        source: edge.sourceID,
+                                                                        target: edge.targetID
+                                                                    }
+                                                                }
+                                                            }),
+                                                            emphasis: {
+                                                                focus: 'adjacency',
+                                                                label: {
+                                                                    position: 'right',
+                                                                    show: true
+                                                                }
+                                                            },
+                                                            roam: true,
+                                                            lineStyle: {
+                                                                width: 0.5,
+                                                                curveness: 0.3,
+                                                                opacity: 0.7
+                                                            }
+                                                        }
+                                                    ]
+                                                }),
+                                                true
+                                            )
+                                        }
+                                    )
+
+                                    option && myChart1.setOption(option);
+
+                                </script>
                             </div>
                         </div>
                     </div>
