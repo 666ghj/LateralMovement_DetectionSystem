@@ -414,6 +414,8 @@ html{
     font-family: data_Number;
     background-repeat: no-repeat;
     background-size: 100%;
+    /* 垂直居中 */
+    line-height: 80px;
 }
 .funct_number{
     color: #dbe9f1;
