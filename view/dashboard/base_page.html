@@ -884,7 +884,7 @@
                                                 <span class=" font-weight-bold">2622</span>
                                             </div>
                                         </div>
-                                        <p class="mb-0">连接方式统计</p>
+                                        <p class="mb-0 lianjiefangshitongji">连接方式统计</p>
                                         <div id="chart-apex-column-02" class="custom-chart"></div>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <p class="mb-0 pt-3 ">28 Jul</p>
@@ -893,6 +893,11 @@
                                         </div>
                                     </div>
                                 </div>
+                                <style>
+                                    .lianjiefangshitongji {
+                                        height: 50px !important;
+                                    }
+                                </style>
                             </div>
                         </div>
                     </div>
@@ -960,7 +965,7 @@
                                 </div>
                             </div>
                             <div class="card-body p-0">
-                                <div id="echats-test2" style="width: 700px;height:400px;"></div>
+                                <div id="echats-test2" style="width: 100%;height:400px;"></div>
                                 <script>
                                     var ROOT_PATH = 'static\\echarts_data'
 
@@ -970,9 +975,31 @@
 
                                     myChart.showLoading()
                                     $.getJSON(
-                                        ROOT_PATH + '\\demo.json',
+                                        ROOT_PATH + '\\test1.json',
                                         function (json) {
                                             myChart.hideLoading()
+
+                                            // 随机选择1/70的边为红色，1/2的边为绿色
+                                            var edges = json.edges
+                                            var numEdgesToColorRed = Math.floor(edges.length / 70)
+                                            var numEdgesToColorGreen = Math.floor(edges.length / 20)
+                                            var edgesToColorRed = new Set()
+                                            var edgesToColorGreen = new Set()
+
+                                            // 随机选择红色边
+                                            while (edgesToColorRed.size < numEdgesToColorRed) {
+                                                var randomIndexRed = Math.floor(Math.random() * edges.length)
+                                                edgesToColorRed.add(randomIndexRed)
+                                            }
+
+                                            // 随机选择绿色边
+                                            while (edgesToColorGreen.size < numEdgesToColorGreen) {
+                                                var randomIndexGreen = Math.floor(Math.random() * edges.length)
+                                                if (!edgesToColorRed.has(randomIndexGreen)) { // 确保绿色边和红色边不重叠
+                                                    edgesToColorGreen.add(randomIndexGreen)
+                                                }
+                                            }
+
                                             myChart.setOption(
                                                 (option = {
                                                     title: {
@@ -997,14 +1024,23 @@
                                                                     }
                                                                 }
                                                             }),
-                                                            edges: json.edges.map(function (edge) {
-                                                                if (edge.sourceID === 'dwda' || edge.targetID === 'asdawdwaync') {
+                                                            edges: json.edges.map(function (edge, index) {
+                                                                if (edgesToColorRed.has(index)) {
                                                                     return {
                                                                         source: edge.sourceID,
                                                                         target: edge.targetID,
                                                                         lineStyle: {
-                                                                            color: '#FFD700', // 设置为黄色
-                                                                            width: 5 // 设置为粗线
+                                                                            color: 'red', // 设置为红色
+                                                                            width: 1 // 设置粗细
+                                                                        }
+                                                                    }
+                                                                } else if (edgesToColorGreen.has(index)) {
+                                                                    return {
+                                                                        source: edge.sourceID,
+                                                                        target: edge.targetID,
+                                                                        lineStyle: {
+                                                                            color: '#2BC725', // 设置为绿色
+                                                                            width: 1.5 // 设置粗细
                                                                         }
                                                                     }
                                                                 } else {
@@ -1036,8 +1072,9 @@
                                     )
 
                                     option && myChart.setOption(option);
-
                                 </script>
+
+
                             </div>
                         </div>
                     </div>
@@ -1105,7 +1142,7 @@
                                 </div>
                             </div>
                             <div class="card-body p-0">
-                                <div id="echats-test1" style="width: 600px;height:400px;"></div>
+                                <div id="echats-test1" style="width: 100%;height:400px;"></div>
                                 <script>
                                     var ROOT_PATH = 'static\\echarts_data'
 
@@ -1115,9 +1152,31 @@
 
                                     myChart1.showLoading()
                                     $.getJSON(
-                                        ROOT_PATH + '\\demo.json',
+                                        ROOT_PATH + '\\test2.json',
                                         function (json) {
                                             myChart1.hideLoading()
+
+                                            // 随机选择1/70的边为红色，1/2的边为绿色
+                                            var edges = json.edges
+                                            var numEdgesToColorRed = Math.floor(edges.length / 40)
+                                            var numEdgesToColorGreen = Math.floor(edges.length / 30)
+                                            var edgesToColorRed = new Set()
+                                            var edgesToColorGreen = new Set()
+
+                                            // 随机选择红色边
+                                            while (edgesToColorRed.size < numEdgesToColorRed) {
+                                                var randomIndexRed = Math.floor(Math.random() * edges.length)
+                                                edgesToColorRed.add(randomIndexRed)
+                                            }
+
+                                            // 随机选择绿色边
+                                            while (edgesToColorGreen.size < numEdgesToColorGreen) {
+                                                var randomIndexGreen = Math.floor(Math.random() * edges.length)
+                                                if (!edgesToColorRed.has(randomIndexGreen)) { // 确保绿色边和红色边不重叠
+                                                    edgesToColorGreen.add(randomIndexGreen)
+                                                }
+                                            }
+
                                             myChart1.setOption(
                                                 (option = {
                                                     title: {
@@ -1142,14 +1201,23 @@
                                                                     }
                                                                 }
                                                             }),
-                                                            edges: json.edges.map(function (edge) {
-                                                                if (edge.sourceID === 'async' || edge.targetID === 'async') {
+                                                            edges: json.edges.map(function (edge, index) {
+                                                                if (edgesToColorRed.has(index)) {
                                                                     return {
                                                                         source: edge.sourceID,
                                                                         target: edge.targetID,
                                                                         lineStyle: {
-                                                                            color: '#FFD700', // 设置为黄色
-                                                                            width: 5 // 设置为粗线
+                                                                            color: 'red', // 设置为红色
+                                                                            width: 1.5 // 设置为粗线
+                                                                        }
+                                                                    }
+                                                                } else if (edgesToColorGreen.has(index)) {
+                                                                    return {
+                                                                        source: edge.sourceID,
+                                                                        target: edge.targetID,
+                                                                        lineStyle: {
+                                                                            color: 'green', // 设置为绿色
+                                                                            width: 1 // 设置为粗线
                                                                         }
                                                                     }
                                                                 } else {
@@ -1181,8 +1249,8 @@
                                     )
 
                                     option && myChart1.setOption(option);
-
                                 </script>
+
                             </div>
                         </div>
                     </div>
