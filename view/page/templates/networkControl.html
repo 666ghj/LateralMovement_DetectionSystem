@@ -166,14 +166,14 @@
         <div class="col-lg-12">
             <div class="d-flex flex-wrap align-items-center justify-content-between my-schedule mb-4">
                <div class="d-flex align-items-center justify-content-between">
-                    <h4 class="font-weight-bold">Product</h4>
+                    <h4 class="font-weight-bold">网络控制</h4>
                 </div>  
                 <div class="create-workform">
                     <div class="d-flex flex-wrap align-items-center justify-content-between">
                         <div class="modal-product-search d-flex">
                             <form class="mr-3 position-relative">
                                 <div class="form-group mb-0">
-                                <input type="text" class="form-control" id="exampleInputText" placeholder="Search Product">
+                                <input type="text" class="form-control" id="exampleInputText" placeholder="节点搜索">
                                 <a class="search-link" href="#">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="" width="20" fill="none" viewbox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
@@ -185,7 +185,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="20" fill="none" viewbox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                                 </svg>
-                                Add Product
+                                新增 节点/日志
                             </a>
                         </div>                            
                     </div>
@@ -197,12 +197,12 @@
                     <div class="card card-block card-stretch">
                         <div class="card-body p-0">
                             <div class="d-flex justify-content-between align-items-center p-3">
-                                <h5 class="font-weight-bold">Products List</h5>
+                                <h5 class="font-weight-bold">节点列表</h5>
                                 <button class="btn btn-secondary btn-sm">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="20" fill="none" viewbox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
                                     </svg>
-                                    Export
+                                    网络导出
                                 </button>
                             </div>
                             <div class="table-responsive">
@@ -210,22 +210,22 @@
                                     <thead class="table-color-heading">
                                         <tr class="text-light">
                                             <th scope="col">
-                                                <label class="text-muted m-0">Product Name</label>
+                                                <label class="text-muted m-0">Node</label>
                                             </th>
                                             <th scope="col">
-                                                <label class="text-muted mb-0">Category</label>
+                                                <label class="text-muted mb-0">最近活跃时间</label>
                                             </th>
                                             <th scope="col" class="text-right">
-                                                <label class="text-muted mb-0">Price</label>
+                                                <label class="text-muted mb-0">Out-degree</label>
                                             </th>
                                             <th scope="col">
-                                                <label class="text-muted mb-0">Quantity</label>
+                                                <label class="text-muted mb-0">In-degree</label>
                                             </th>
                                             <th scope="col">
-                                                <label class="text-muted mb-0">Inventory</label>
+                                                <label class="text-muted mb-0">Status</label>
                                             </th>
                                             <th scope="col" class="text-right">
-                                                <span class="text-muted">Action</span>
+                                                <span class="text-muted">操作</span>
                                             </th>
                                         </tr>
                                     </thead>
@@ -234,7 +234,7 @@
                                             <td class="">
                                                 <div class="active-project-1 d-flex align-items-center mt-0 ">
                                                     <div class="h-avatar is-medium">
-                                                        <img class="avatar rounded" alt="user-icon" src="static/picture/17.jpg">
+                                                        <img class="avatar rounded" alt="user-icon" src="static\picture\服务器素材.png">
                                                     </div>
                                                     <div class="data-content">
                                                         <div>
@@ -262,6 +262,12 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex justify-content-end align-items-center">
+                                                    <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="customer-view.html">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary" width="20" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                                        </svg>
+                                                    </a>
                                                     <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#">
                                                         <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4" width="20" fill="none" viewbox="0 0 24 24" stroke="currentColor">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
@@ -279,7 +285,7 @@
                                             <td class="">
                                                 <div class="active-project-1 d-flex align-items-center mt-0 ">
                                                     <div class="h-avatar is-medium">
-                                                        <img class="avatar rounded" alt="user-icon" src="static/picture/15.jpg">
+                                                        <img class="avatar rounded" alt="user-icon" src="static\picture\未知设备素材.png">
                                                     </div>
                                                     <div class="data-content">
                                                         <div>
@@ -307,6 +313,12 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex justify-content-end align-items-center">
+                                                    <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="customer-view.html">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary" width="20" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                                        </svg>
+                                                    </a>
                                                     <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#">
                                                         <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4" width="20" fill="none" viewbox="0 0 24 24" stroke="currentColor">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
@@ -324,7 +336,7 @@
                                             <td class="">
                                                 <div class="active-project-1 d-flex align-items-center mt-0 ">
                                                     <div class="h-avatar is-medium">
-                                                        <img class="avatar rounded" alt="user-icon" src="static/picture/21.jpg">
+                                                        <img class="avatar rounded" alt="user-icon" src="static\picture\未知设备素材.png">
                                                     </div>
                                                     <div class="data-content">
                                                         <div>
@@ -352,6 +364,12 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex justify-content-end align-items-center">
+                                                    <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="customer-view.html">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary" width="20" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                                        </svg>
+                                                    </a>
                                                     <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#">
                                                         <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4" width="20" fill="none" viewbox="0 0 24 24" stroke="currentColor">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
@@ -397,6 +415,12 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex justify-content-end align-items-center">
+                                                    <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="customer-view.html">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary" width="20" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                                        </svg>
+                                                    </a>
                                                     <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#">
                                                         <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4" width="20" fill="none" viewbox="0 0 24 24" stroke="currentColor">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
@@ -414,7 +438,7 @@
                                             <td class="">
                                                 <div class="active-project-1 d-flex align-items-center mt-0 ">
                                                     <div class="h-avatar is-medium">
-                                                        <img class="avatar rounded" alt="user-icon" src="static/picture/8.jpg">
+                                                        <img class="avatar rounded" alt="user-icon" src="static/picture/4.jpg">
                                                     </div>
                                                     <div class="data-content">
                                                         <div>
@@ -442,6 +466,12 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex justify-content-end align-items-center">
+                                                    <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="customer-view.html">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary" width="20" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                                        </svg>
+                                                    </a>
                                                     <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#">
                                                         <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4" width="20" fill="none" viewbox="0 0 24 24" stroke="currentColor">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
@@ -459,7 +489,7 @@
                                             <td class="">
                                                 <div class="active-project-1 d-flex align-items-center mt-0 ">
                                                     <div class="h-avatar is-medium">
-                                                        <img class="avatar rounded" alt="user-icon" src="static/picture/51.jpg">
+                                                        <img class="avatar rounded" alt="user-icon" src="static\picture\未知设备素材.png">
                                                     </div>
                                                     <div class="data-content">
                                                         <div>
@@ -487,6 +517,12 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex justify-content-end align-items-center">
+                                                    <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="customer-view.html">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary" width="20" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                                        </svg>
+                                                    </a>
                                                     <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#">
                                                         <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4" width="20" fill="none" viewbox="0 0 24 24" stroke="currentColor">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
@@ -504,7 +540,7 @@
                                             <td class="">
                                                 <div class="active-project-1 d-flex align-items-center mt-0 ">
                                                     <div class="h-avatar is-medium">
-                                                        <img class="avatar rounded" alt="user-icon" src="static/picture/7.jpg">
+                                                        <img class="avatar rounded" alt="user-icon" src="static/picture/4.jpg">
                                                     </div>
                                                     <div class="data-content">
                                                         <div>
@@ -532,6 +568,12 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex justify-content-end align-items-center">
+                                                    <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="customer-view.html">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary" width="20" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                                        </svg>
+                                                    </a>
                                                     <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#">
                                                         <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4" width="20" fill="none" viewbox="0 0 24 24" stroke="currentColor">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
@@ -549,7 +591,7 @@
                                             <td class="">
                                                 <div class="active-project-1 d-flex align-items-center mt-0 ">
                                                     <div class="h-avatar is-medium">
-                                                        <img class="avatar rounded" alt="user-icon" src="static/picture/16.jpg">
+                                                        <img class="avatar rounded" alt="user-icon" src="static\picture\未知设备素材.png">
                                                     </div>
                                                     <div class="data-content">
                                                         <div>
@@ -577,6 +619,12 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex justify-content-end align-items-center">
+                                                    <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="customer-view.html">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary" width="20" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                                        </svg>
+                                                    </a>
                                                     <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#">
                                                         <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4" width="20" fill="none" viewbox="0 0 24 24" stroke="currentColor">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
@@ -594,7 +642,7 @@
                                             <td class="">
                                                 <div class="active-project-1 d-flex align-items-center mt-0 ">
                                                     <div class="h-avatar is-medium">
-                                                        <img class="avatar rounded" alt="user-icon" src="static/picture/6.jpg">
+                                                        <img class="avatar rounded" alt="user-icon" src="static\picture\服务器素材.png">
                                                     </div>
                                                     <div class="data-content">
                                                         <div>
@@ -622,6 +670,12 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex justify-content-end align-items-center">
+                                                    <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="customer-view.html">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary" width="20" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                                        </svg>
+                                                    </a>
                                                     <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#">
                                                         <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4" width="20" fill="none" viewbox="0 0 24 24" stroke="currentColor">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
@@ -639,7 +693,7 @@
                                             <td class="">
                                                 <div class="active-project-1 d-flex align-items-center mt-0 ">
                                                     <div class="h-avatar is-medium">
-                                                        <img class="avatar rounded" alt="user-icon" src="static/picture/12.jpg">
+                                                        <img class="avatar rounded" alt="user-icon" src="static/picture/4.jpg">
                                                     </div>
                                                     <div class="data-content">
                                                         <div>
@@ -667,6 +721,12 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex justify-content-end align-items-center">
+                                                    <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="customer-view.html">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary" width="20" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                                        </svg>
+                                                    </a>
                                                     <a class="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="#">
                                                         <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mx-4" width="20" fill="none" viewbox="0 0 24 24" stroke="currentColor">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>

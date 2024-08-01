@@ -830,7 +830,7 @@
                                     </li>
                                     <div
                                         class="d-flex justify-content-end align-items-center border-top-table p-3 huoyuejiedian-chakanquanbu">
-                                        <button class="btn btn-secondary btn-sm">查看全部</button>
+                                        <button class="btn btn-secondary btn-sm" id="chakanquanbu">查看全部</button>
                                     </div>
                                     <style>
                                         .huoyuejiedian-li {
@@ -841,6 +841,12 @@
                                             height: 65px !important;
                                         }
                                     </style>
+                                    <script>
+                                        document.getElementById("chakanquanbu").onclick = function () {
+                                            // 跳转到/networkControl
+                                            window.location.href = "/networkControl";
+                                        }
+                                    </script>
                                 </ul>
                             </div>
                         </div>
