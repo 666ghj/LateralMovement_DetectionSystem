@@ -429,6 +429,7 @@ Index Of Script
                 contentHeight: "auto",
                 eventLimit: true,
                 dayMaxEvents: 4,
+                defaultDate: '2024-07-30', // 设置默认日期为当前日期
                 header: {
                     left: "prev,next today",
                     center: "title",
