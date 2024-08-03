@@ -671,6 +671,9 @@ function deleteRow(button) {
 
     // 重新初始化 tooltip
     $('[data-toggle="tooltip"]').tooltip();
+
+    // 删除所有同时拥有“tooltip fade bs-tooltip-top show”类的元素
+    $('.tooltip').filter('.fade.bs-tooltip-top.show').remove();
 }
 </script>
 {% endblock %}
