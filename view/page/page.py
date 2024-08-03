@@ -47,3 +47,8 @@ def show_detectionResult():
 @page_pb.route('/forecastResult')
 def show_forecastResult():
     return render_template('forecastResult.html')
+
+# 识别路径/networkControl/add
+@page_pb.route('/networkControlAdd')
+def show_networkControl_add():
+    return render_template('networkControlAdd.html')

@@ -1,0 +1,441 @@
+{% extends 'base_page.html' %} {% block title %} 网络控制 {% endblock %} {%
+block nav %}
+<nav class="iq-sidebar-menu">
+    <ul id="iq-sidebar-toggle" class="side-menu">
+        <li class="sidebar-layout">
+            <a href="/dashboard" class="svg-icon">
+                <i class="">
+                    <svg class="svg-icon" id="iq-chart-1" width="18" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewbox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 13v-1m4 1v-3m4 3V8M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"
+                            style="stroke-dasharray: 96, 116; stroke-dashoffset: 0"></path>
+                    </svg>
+                </i>
+                <span class="ml-2">系统大屏</span>
+            </a>
+        </li>
+        <li class="sidebar-layout">
+            <a href="/index" class="svg-icon">
+                <i class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewbox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                        </path>
+                    </svg>
+                </i>
+                <span class="ml-2">主页</span>
+            </a>
+        </li>
+        <li class="px-3 pt-3 pb-2">
+            <span class="text-uppercase small font-weight-bold">网络结构</span>
+        </li>
+        <li class="sidebar-layout">
+            <a href="/nodeMap" class="svg-icon">
+                <i class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewbox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5">
+                        </path>
+                    </svg>
+                </i>
+                <span class="ml-2">动态图谱</span>
+            </a>
+        </li>
+        <li class="sidebar-layout">
+            <a href="/logCollect" class="svg-icon">
+                <i>
+                    <svg class="svg-icon" id="iq-form-1" width="18" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewbox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                            style="stroke-dasharray: 74, 94; stroke-dashoffset: 0"></path>
+                    </svg>
+                </i>
+                <span class="ml-2">日志收集</span>
+            </a>
+        </li>
+        <li class="active sidebar-layout">
+            <a href="/networkControl" class="svg-icon">
+                <i class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewbox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4">
+                        </path>
+                    </svg>
+                </i>
+                <span class="ml-2">网络控制</span>
+            </a>
+        </li>
+        <li class="px-3 pt-3 pb-2">
+            <span class="text-uppercase small font-weight-bold">系统操作</span>
+        </li>
+        <li class="sidebar-layout">
+            <a href="/threatEnhancement" class="svg-icon">
+                <i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewbox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                        </path>
+                    </svg> </i><span class="ml-2">威胁增强</span>
+            </a>
+        </li>
+        <li class="sidebar-layout">
+            <a href="/detection" class="svg-icon">
+                <i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewbox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                        </path>
+                    </svg> </i><span class="ml-2">攻击高效检测</span>
+            </a>
+        </li>
+        <li class="sidebar-layout">
+            <a href="/forecast" class="svg-icon">
+                <i class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewbox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
+                        </path>
+                    </svg> </i><span class="ml-2">智能推理预测</span>
+            </a>
+        </li>
+        <li class="sidebar-layout">
+            <a href="#app1" class="collapsed svg-icon" data-toggle="collapse" aria-expanded="false">
+                <i class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewbox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                </i>
+                <span class="ml-2">结果展示</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon iq-arrow-right arrow-active" width="15"
+                    fill="none" viewbox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+            <ul id="app1" class="submenu collapse" data-parent="#iq-sidebar-toggle">
+                <li class="sidebar-layout">
+                    <a href="/detectionResult" class="svg-icon">
+                        <i>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewbox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                                </path>
+                            </svg> </i><span class="">检测结果</span>
+                    </a>
+                </li>
+                <li class="sidebar-layout">
+                    <a href="/forecastResult" class="svg-icon">
+                        <i class="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewbox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
+                                </path>
+                            </svg> </i><span class="">预测结果</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+{% endblock %} {% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="d-flex flex-wrap align-items-center justify-content-between">
+                <div class="d-flex align-items-center justify-content-between">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb p-0 mb-0">
+                            <li class="breadcrumb-item">
+                                <a href="/networkControl">网络控制</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">新增</li>
+                        </ol>
+                    </nav>
+                </div>
+                <a href="/networkControl"
+                    class="btn btn-primary btn-sm d-flex align-items-center justify-content-between ml-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" viewbox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="ml-2">返回</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-12 mb-3 d-flex justify-content-between">
+            <h4 class="font-weight-bold d-flex align-items-center">新增节点/日志</h4>
+        </div>
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="font-weight-bold mb-3">新增单个节点</h5>
+                    <form id="nodeForm" class="row g-3">
+                        <div class="col-md-6 mb-3">
+                            <label for="nodeIp"
+                                class="form-label font-weight-bold text-muted text-uppercase">节点IP</label>
+                            <input type="text" class="form-control" id="nodeIp" placeholder="请输入标准IPV4地址" required />
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="nodeStatus"
+                                class="form-label font-weight-bold text-muted text-uppercase">状态</label>
+                            <select id="nodeStatus" class="form-select form-control">
+                                <option value="正常">正常</option>
+                                <option value="异常">异常</option>
+                                <option value="待检测">待检测</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <div id="events">
+                                <!-- 默认显示第一个事件 -->
+                                <style>
+                                    .event-entry {
+                                        border: 1px solid #ccc;
+                                        padding: 10px;
+                                        border-radius: 5px;
+                                    }
+                                </style>
+                                <div class="event-entry mb-3">
+                                    <label for="events"
+                                        class="form-label font-weight-bold text-muted text-uppercase">事件1</label>
+                                    <div class="row g-3">
+                                        <div class="col-md-2">
+                                            <label class="form-label">类型</label>
+                                            <select class="form-select form-control event-type"
+                                                onchange="updateEventFields(this)">
+                                                <option value="outbound">Out-degree</option>
+                                                <option value="inbound">In-degree</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label class="form-label">Event</label>
+                                            <select class="form-select form-control event-field">
+                                                <option value="0">Connection</option>
+                                                <option value="1">Auth Failure</option>
+                                                <option value="2">Session Opened</option>
+                                                <option value="3">Session Closed</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label class="form-label target-label">目标IP</label>
+                                            <input type="text" class="form-control event-field target-ip"
+                                                placeholder="请输入标准IPV4地址" />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label class="form-label">源端口</label>
+                                            <input type="text" class="form-control event-field" placeholder="1~65535" />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label class="form-label target-port-label">目标端口</label>
+                                            <input type="text" class="form-control event-field" placeholder="1~65535" />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label class="form-label">源用户</label>
+                                            <input type="text" class="form-control event-field" placeholder="源用户" />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label class="form-label target-user-label">目标用户</label>
+                                            <input type="text" class="form-control event-field target-user"
+                                                placeholder="目标用户" />
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label class="form-label">Connection Method</label>
+                                            <select class="form-select form-control event-field">
+                                                <option value="0">password</option>
+                                                <option value="1">keyboard-interactive/pam</option>
+                                                <option value="2">unknown</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label class="form-label">连接是否成功</label>
+                                            <select class="form-select form-control event-field">
+                                                <option value="1">是</option>
+                                                <option value="0">否</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2 d-flex align-items-end">
+                                            <button type="button" class="btn btn-danger btn-sm"
+                                                onclick="removeEvent(this)">删除事件</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="addEvent()">增加事件</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer d-flex justify-content-end tijiaoanniu">
+                    <button class="btn btn-primary" onclick="submitNodeForm()">提交</button>
+                </div>
+                <style>
+                    .tijiaoanniu {
+                        margin-top: -30px !important;
+                    }
+                </style>
+            </div>
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h5 class="font-weight-bold mb-3">通过日志批量导入</h5>
+                    <div class="card-body bg-secondary rounded" onclick="document.getElementById('fileInput').click()"
+                        style="cursor: pointer;">
+                        <input type="file" id="fileInput" style="display: none;" />
+                        <div class="d-flex justify-content-center mt-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="black"
+                                class="bi bi-upload" viewBox="0 0 16 16">
+                                <path
+                                    d="M.5 9.9a.5.5 0 0 1 .5-.5h1V12A1.5 1.5 0 0 0 3.5 13.5h9A1.5 1.5 0 0 0 14 12V9.4h1a.5.5 0 0 1 .5.5v3.1a1 1 0 0 1-1 1H1.5a1 1 0 0 1-1-1V9.9z" />
+                                <path
+                                    d="M7.646 4.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.207V11.5a.5.5 0 0 1-1 0V5.207L5.354 7.854a.5.5 0 1 1-.708-.708l3-3z" />
+                            </svg>
+                        </div>
+                        <div class="d-flex justify-content-center mt-2 mb-5">
+                            <p class="mb-0 text-muted font-weight-bold">
+                                Drop files here or click to upload
+                            </p>
+                        </div>
+                        <div class="d-flex justify-content-end mt-3">
+                            <button class="btn btn-primary" onclick="submitBatchImport()">
+                                提交
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    function submitBatchImport() {
+                        // 实现批量导入提交逻辑
+                        alert('请给出正确文件格式')
+                    }
+                </script>
+
+                <style>
+                    .card-body.bg-secondary:hover {
+                        cursor: pointer;
+                    }
+                </style>
+
+
+                <script>
+                    function submitBatchImport() {
+                        // 实现批量导入提交逻辑
+                        alert('请给出正确文件格式')
+                    }
+                </script>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let eventCount = 1 // 初始事件编号
+
+        function addEvent() {
+            eventCount++
+            const eventContainer = document.createElement('div')
+            eventContainer.classList.add('event-entry', 'mb-3')
+            eventContainer.innerHTML = `
+            <label for="events" class="form-label font-weight-bold text-muted text-uppercase">事件${eventCount}</label>
+            <div class="row g-3">
+                <div class="col-md-2">
+                    <label class="form-label">类型</label>
+                    <select class="form-select form-control event-type"
+                        onchange="updateEventFields(this)">
+                        <option value="outbound">Out-degree</option>
+                        <option value="inbound">In-degree</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Event</label>
+                    <select class="form-select form-control event-field">
+                        <option value="0">Connection</option>
+                        <option value="1">Auth Failure</option>
+                        <option value="2">Session Opened</option>
+                        <option value="3">Session Closed</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label target-label">目标IP</label>
+                    <input type="text" class="form-control event-field target-ip" placeholder="请输入标准IPV4地址" />
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">源端口</label>
+                    <input type="text" class="form-control event-field" placeholder="1~65535" />
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label target-port-label">目标端口</label>
+                    <input type="text" class="form-control event-field" placeholder="1~65535" />
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">源用户</label>
+                    <input type="text" class="form-control event-field" placeholder="源用户" />
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label target-user-label">目标用户</label>
+                    <input type="text" class="form-control event-field target-user" placeholder="目标用户" />
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Connection Method</label>
+                    <select class="form-select form-control event-field">
+                        <option value="0">password</option>
+                        <option value="1">keyboard-interactive/pam</option>
+                        <option value="2">unknown</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">连接是否成功</label>
+                    <select class="form-select form-control event-field">
+                        <option value="1">是</option>
+                        <option value="0">否</option>
+                    </select>
+                </div>
+                <div class="col-md-2 d-flex align-items-end">
+                    <button type="button" class="btn btn-danger btn-sm" onclick="removeEvent(this)">删除事件</button>
+                </div>
+            </div>
+        `
+            document.getElementById('events').appendChild(eventContainer)
+        }
+
+        function removeEvent(button) {
+            const eventEntry = button.closest('.event-entry')
+            eventEntry.remove()
+        }
+
+        function updateEventFields(select) {
+            const eventEntry = select.closest('.event-entry')
+            const eventType = select.value
+
+            if (eventType === 'inbound') {
+                eventEntry.querySelector('.target-ip').placeholder = '源IP'
+                eventEntry.querySelector('.target-port-label').innerText = '源端口'
+                eventEntry.querySelector('.target-user-label').innerText = '源用户'
+            } else {
+                eventEntry.querySelector('.target-ip').placeholder = '目标IP'
+                eventEntry.querySelector('.target-port-label').innerText = '目标端口'
+                eventEntry.querySelector('.target-user-label').innerText = '目标用户'
+            }
+        }
+
+        function submitNodeForm() {
+            // 实现单个节点提交逻辑
+            alert('请给出正确的节点信息')
+        }
+
+        function submitBatchImport() {
+            // 实现批量导入提交逻辑
+            alert('请给出正确文件格式')
+        }
+    </script>
+    {% endblock %}
