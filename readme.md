@@ -6,7 +6,7 @@ flask框架，app.py运行
 
 部分界面展示：
 
-<img width="1272" alt="a5980c998deb629119326f474c29c58" src="https://github.com/user-attachments/assets/262c75c8-8024-4361-8162-e9b5270d1150">
+![image](https://github.com/user-attachments/assets/262c75c8-8024-4361-8162-e9b5270d1150)
 
 ![image](https://github.com/user-attachments/assets/303df908-db3f-4068-a6b1-10caa1acc1cb)
 
