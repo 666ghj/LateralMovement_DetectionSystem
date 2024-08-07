@@ -4004,20 +4004,32 @@ block nav %}
                         var chartDom = document.getElementById('weixiezengqiang_echart')
                         var myChart = echarts.init(chartDom)
                         var option
-
+                    
                         myChart.showLoading()
                         $.get(ROOT_PATH + '\\threatEnhancement_test.json', function (webkitDep) {
                             myChart.hideLoading()
-
+                    
                             // 通过遍历节点来查找 category 为 3 的节点 ID
                             var category3Nodes = new Set()
                             webkitDep.nodes.forEach(function (node, idx) {
                                 node.id = idx
                                 if (node.category === 3) {
                                     category3Nodes.add(idx)
+                                } 
+                                // 将 category 为 0，2，4 的节点变为绿色
+                                if (node.category === 0 || node.category === 2 || node.category === 4) {
+                                    node.itemStyle = {
+                                        color: 'green'
+                                    }
+                                }
+                                // 将 category 为 1 的节点变为蓝色
+                                if (node.category === 1) {
+                                    node.itemStyle = {
+                                        color: 'blue'
+                                    }
                                 }
                             })
-
+                    
                             // 修改边的颜色
                             webkitDep.links.forEach(function (link) {
                                 if (category3Nodes.has(link.source) || category3Nodes.has(link.target)) {
@@ -4026,7 +4038,7 @@ block nav %}
                                     }
                                 }
                             })
-
+                    
                             option = {
                                 title: {
                                     text: '威胁增强虚拟网络图',
@@ -4059,12 +4071,13 @@ block nav %}
                                     }
                                 ]
                             }
-
+                    
                             myChart.setOption(option)
                         })
-
+                    
                         option && myChart.setOption(option);
                     </script>
+                    
                 </div>
             </div>
             <!-- 网络日志特征提取模块 -->
