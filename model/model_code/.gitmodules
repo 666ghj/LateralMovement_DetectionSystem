@@ -1,0 +1,6 @@
+[submodule "driver"]
+	path = driver
+	url = https://github.com/XIA-Jinyi/FileCrypt-Driver.git
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/XIA-Jinyi/FileCrypt-Frontend.git

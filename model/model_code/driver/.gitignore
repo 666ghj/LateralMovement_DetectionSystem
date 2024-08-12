@@ -1,0 +1,6 @@
+.vs
+.vscode
+arm64
+x64
+Debug
+Release
