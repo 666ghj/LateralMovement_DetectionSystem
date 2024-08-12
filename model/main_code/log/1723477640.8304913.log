@@ -1,0 +1,3 @@
+2024-08-12 23:47:20,831 - root - INFO - Running Urban Planning
+2024-08-12 23:47:20,831 - urbanGUI - INFO - Namespace(induct=0.3, n=1000000, data='auth', bs=200, prefix='', n_degree=10, n_head=2, n_epoch=10, n_layer=1, lr=0.0001, patience=5, n_runs=1, drop_out=0.1, gpu=0, node_dim=100, time_dim=100, backprop_every=1, use_memory=False, embedding_module='graph_attention', message_function='identity', memory_updater='gru', aggregator='last', memory_update_at_end=False, message_dim=100, memory_dim=10, different_new_nodes=False, uniform=False, randomize_features=False, use_destination_embedding_in_message=False, use_source_embedding_in_message=False, dyrep=False)
+2024-08-12 23:47:20,831 - urbanGUI - INFO - inductiveness 0.3
