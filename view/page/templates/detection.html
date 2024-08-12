@@ -5012,7 +5012,7 @@ block nav %}
         width: 0;
         background-color: #D6E4FF;
         z-index: 1;
-        transition: width 5s;
+        transition: width 9s;
         /* 关闭box-shadow */
         box-shadow: none;
     }
@@ -5338,7 +5338,7 @@ block nav %}
                     textElement.textContent = sentences[index][sentenceIndex]
                     sentenceIndex++
                 }
-            }, 1000)
+            }, 2000)
 
             // 设置progress的宽度为0并开始进度动画
             progress.style.width = '0'
@@ -5364,7 +5364,7 @@ block nav %}
                 // 处理下一个 item
                 processItem(index + 1)
 
-            }, 5000) // 这里的5000ms应与进度条动画时间相匹配
+            }, 10000) // 这里的5000ms应与进度条动画时间相匹配
         }
 
         // 从第一个 item 开始处理
